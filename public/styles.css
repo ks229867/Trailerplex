@@ -1,0 +1,777 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Lobster&family=Montserrat&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  font-family: "Lato", sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  color: white;
+  width: 100%;
+}
+.navbar.scrolled {
+  background-color: black;
+  transition: all 1s ease-in-out;
+}
+.navbar .container {
+  padding: 0px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5em;
+}
+.navbar h1 {
+  color: rgba(255, 0, 0, 0.805);
+  font-size: 2rem;
+  margin-right: 2rem;
+}
+.navbar a {
+  text-decoration: none;
+}
+.navbar a:hover {
+  text-decoration: none;
+}
+.navbar .nav-left {
+  display: flex;
+  align-items: center;
+}
+.navbar .nav-left a {
+  color: white;
+  margin-left: 1em;
+  cursor: pointer;
+  text-decoration: none;
+}
+.navbar .nav-left a:hover {
+  font-weight: bold;
+}
+.navbar .nav-left a:-moz-any-link {
+  color: white;
+}
+.navbar .nav-left a:any-link {
+  color: white;
+}
+.navbar .show {
+  visibility: visible;
+}
+.navbar .hidden {
+  visibility: hidden;
+}
+.navbar .search-bar {
+  width: 500px;
+}
+.navbar .search-bar .form-control {
+  padding: 0 1.2rem;
+  background-color: white;
+  color: black;
+  border-radius: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .search-bar input {
+  width: 70%;
+  font-size: 1.2rem;
+  padding: 0.5rem 0.8rem;
+  border: none;
+}
+.navbar .search-bar input:focus {
+  outline: none;
+}
+.navbar .search-bar .close-search-btn {
+  font-size: 1.2rem;
+  padding-bottom: 3px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-weight: bold;
+}
+.navbar .nav-right {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.navbar .nav-right .icon {
+  margin: 0 15px;
+  cursor: pointer;
+}
+.navbar .nav-right img {
+  height: 30px;
+  width: 30px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.navbar .nav-right .profile {
+  position: relative;
+}
+.navbar .nav-right .profile .options {
+  display: none;
+  position: absolute;
+  background-color: black;
+  border-radius: 5px;
+}
+.navbar .nav-right .profile .options span {
+  cursor: pointer;
+}
+.navbar .nav-right .profile span {
+  padding: 1rem;
+}
+.navbar .nav-right .profile:hover .options {
+  display: flex;
+  flex-direction: column;
+}
+.navbar .nav-right .profile:hover .options span:hover {
+  background-color: rgba(255, 255, 255, 0.496);
+}
+.navbar .nav-right .signUp-btn {
+  background-color: rgb(253, 69, 69);
+  color: white;
+  font-size: 1.1rem;
+  padding: 0.3rem 0.6rem;
+  border: rgb(248, 61, 61);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.navbar .nav-right .signUp-btn:hover {
+  background-color: rgb(251, 19, 19);
+}
+.navbar .nav-right .signIn-btn {
+  background: transparent;
+  font-size: 1.1rem;
+  padding: 0.3rem 0.6rem;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.navbar .nav-right .signIn-btn:hover {
+  font-weight: bold;
+}
+.navbar .hamburger-icon {
+  width: 35px;
+  height: 35px;
+  border: none;
+  background: none;
+  visibility: hidden;
+  margin-left: 1rem;
+}
+.navbar .hamburger-icon .bar, .navbar .hamburger-icon:after, .navbar .hamburger-icon:before {
+  content: "";
+  display: block;
+  background-color: rgba(255, 255, 255, 0.723);
+  height: 5px;
+  transition: 0.4s;
+  margin: 3px 0;
+  cursor: pointer;
+}
+.navbar .hamburger-icon:before {
+  width: 30%;
+}
+.navbar .hamburger-icon .bar {
+  width: 60%;
+}
+.navbar .hamburger-icon:after {
+  width: 90%;
+}
+
+@media (max-width: 850px) {
+  .navbar .show {
+    visibility: visible;
+  }
+  .navbar .hidden {
+    visibility: hidden;
+  }
+  .navbar .search-bar {
+    position: absolute;
+    top: 5rem;
+    left: 20%;
+    width: 60%;
+    border-radius: 5rem;
+    background-color: white;
+    color: black;
+  }
+  .navbar .search-bar input {
+    width: 80%;
+    font-size: 1.2rem;
+    padding: 0.5rem 0.8rem;
+    border: none;
+  }
+  .navbar .search-bar input:focus {
+    outline: none;
+  }
+  .navbar .search-bar .close-search-btn {
+    font-size: 1.2rem;
+    padding-bottom: 3px;
+    font-weight: bold;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  .nav-left a {
+    display: none;
+  }
+  .nav-left .nav-logo {
+    display: inline;
+  }
+  .nav-left .nav-logo:hover {
+    text-decoration: none;
+  }
+  .nav-right {
+    position: relative;
+  }
+  .nav-right .profile {
+    display: none;
+  }
+  .hamburger-icon .bar, .hamburger-icon::after, .hamburger-icon:before {
+    visibility: visible;
+  }
+}
+.main {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85vh;
+  position: relative;
+}
+.main .gradient {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, black, transparent);
+}
+.main img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.main .movie-info {
+  position: absolute;
+  top: 25%;
+  left: 2rem;
+  width: 80%;
+  height: 100%;
+  padding: 0 2rem;
+}
+.main .movie-info .main-movie-title {
+  color: white;
+  font-size: 4rem;
+  margin-bottom: 0.6em;
+}
+.main .movie-info .release-date {
+  color: rgba(184, 184, 184, 0.736);
+  margin: 1.1rem 1rem;
+}
+.main .movie-info .overview {
+  color: rgb(188, 187, 187);
+  font-size: 1.2rem;
+}
+
+@media (max-width: 850px) {
+  .main {
+    height: 80vh;
+  }
+  .main .movie-info {
+    top: 25%;
+    height: 90%;
+  }
+  .main .movie-info .main-movie-title {
+    font-size: 2.5rem;
+  }
+  .main .movie-info .main-buttons .play-button {
+    font-size: 1rem;
+  }
+  .main .movie-info .main-buttons .watchLater-button {
+    font-size: 1rem;
+  }
+  .main .movie-info .overview {
+    width: 80%;
+  }
+}
+.sidebar {
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  height: 80%;
+  width: 45%;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 2rem 1rem;
+}
+.sidebar .close-icon {
+  position: relative;
+  display: block;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 35px;
+  height: 35px;
+  margin-left: 1.5rem;
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+.sidebar .close-icon:after, .sidebar .close-icon:before {
+  content: "";
+  display: block;
+  background-color: rgba(255, 255, 255, 0.737);
+  height: 3px;
+  transition: 0.4s;
+  margin: -3px 0;
+  width: 100%;
+}
+.sidebar .close-icon:before {
+  transform: rotate(45deg);
+}
+.sidebar .close-icon:after {
+  transform: rotate(-45deg);
+}
+.sidebar .sidebar-menu {
+  margin: 2.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.sidebar .sidebar-menu a {
+  color: white;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+.sidebar .sidebar-menu a:hover {
+  font-weight: bold;
+}
+.sidebar .sidebar-menu button {
+  background-color: black;
+  color: white;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+.sidebar .sidebar-menu button:hover {
+  text-decoration: underline;
+}
+
+.row-container h2 {
+  color: white;
+  padding: 0 2rem;
+}
+.row-container .row {
+  position: relative;
+  margin: 1.5rem 0;
+}
+.row-container .row .sideArrow {
+  width: 50px;
+  height: 100%;
+  background-color: rgba(22, 22, 22, 0.5);
+  color: white;
+  position: absolute;
+  z-index: 99;
+}
+.row-container .row .sideArrow.left {
+  top: 0;
+  left: 0;
+}
+.row-container .row .sideArrow.right {
+  top: 0;
+  right: 0;
+  width: 82px;
+}
+.row-container .row .sideArrow.noClick {
+  color: black;
+  background-color: black;
+}
+.row-container .row .sideArrow.noClick:hover {
+  color: black;
+  background-color: black;
+}
+.row-container .row .sideArrow:hover {
+  background-color: rgba(22, 22, 22, 0.8);
+  cursor: pointer;
+}
+.row-container .row-items {
+  display: flex;
+  width: -moz-max-content;
+  width: max-content;
+  margin-left: 50px;
+  transition: all 1s ease;
+  position: relative;
+}
+.row-container .row-items .row-item {
+  position: relative;
+  width: 225px;
+  height: 150px;
+  margin-left: 5px;
+  color: white;
+  overflow: hidden;
+}
+.row-container .row-items .row-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.row-container .row-items .row-item .item-info {
+  visibility: hidden;
+}
+.row-container .row-items .row-item:hover .row-item-hover {
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  opacity: 0.8;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.row-container .row-items .row-item:hover .row-item-hover .hover-movie-title {
+  font-weight: bold;
+}
+.row-container .row-items .row-item:hover .row-item-hover .hover-movie-likes {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  z-index: 100;
+  cursor: default;
+}
+
+.movie-section {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  margin-top: 4rem;
+  margin-left: 2rem;
+}
+.movie-section .movie-left {
+  padding: 5rem;
+}
+.movie-section .movie-left .movie-poster {
+  width: 400px;
+  height: 500px;
+  box-shadow: 3px 2px 15px -1px rgba(151, 149, 149, 0.75);
+}
+.movie-section .movie-left .movie-poster img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 10px;
+}
+.movie-section .movie-right {
+  color: white;
+  padding: 4rem 0;
+  margin-left: 1rem;
+  width: 80%;
+}
+.movie-section .movie-right h1 {
+  font-size: 3rem;
+  letter-spacing: 4px;
+  margin: 2rem 0 1rem;
+}
+.movie-section .movie-right .movie-info {
+  color: rgb(142, 140, 140);
+  margin: 1rem 0 2rem;
+}
+.movie-section .movie-right .movie-info span {
+  margin-left: 1.5rem;
+}
+.movie-section .movie-right p {
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+}
+
+.trailer-button {
+  margin-top: 1rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+}
+.trailer-button:hover {
+  background-color: rgba(185, 185, 185, 0.664);
+  cursor: pointer;
+  color: white;
+}
+
+.not-trailer {
+  font-size: 1.2rem;
+  color: rgb(252, 24, 24);
+  margin-top: 1em;
+}
+
+@media (max-width: 850px) {
+  .movie-section {
+    grid-template-columns: 1fr;
+  }
+  .movie-right {
+    padding: 1rem 2rem;
+    margin-left: 3rem;
+  }
+  .movie-right h1 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    letter-spacing: 3px;
+  }
+  .movie-right p {
+    width: 80%;
+    letter-spacing: 1.5px;
+    font-size: 1.2rem;
+  }
+  .movie-right .movie-info {
+    margin-bottom: 1.5rem;
+  }
+  .movie-right .movie-info span {
+    margin-left: 1rem;
+  }
+}
+.searched-container {
+  margin: 6rem 4rem 0;
+  color: white;
+}
+.searched-container h1 {
+  font-size: 3rem;
+  text-transform: capitalize;
+  padding: 3rem 5rem;
+}
+.searched-container .searched-movies {
+  margin-left: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.searched-container .searched-movies .searched-movie {
+  position: relative;
+  width: 350px;
+  height: 250px;
+  margin: 2rem;
+  cursor: pointer;
+}
+.searched-container .searched-movies .searched-movie img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.searched-container .searched-movies .searched-movie .movie-hover {
+  visibility: hidden;
+}
+.searched-container .searched-movies .searched-movie:hover .movie-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 2px 15px -1px rgba(151, 149, 149, 0.75);
+}
+.searched-container .searched-movies .searched-movie:hover .movie-hover .searched-movie-title {
+  font-weight: bold;
+}
+.searched-container .searched-movies .searched-movie:hover .movie-hover .searched-movie-likes {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+@media (max-width: 850px) {
+  .searched-container h1 {
+    font-size: 2rem;
+    text-transform: capitalize;
+    padding: 4rem 5rem;
+  }
+  .searched-container .searched-movies {
+    margin: 2rem 3rem;
+  }
+}
+.category-container {
+  margin: 6rem 4rem 0;
+  color: white;
+}
+.category-container h2 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  padding: 3rem 5rem;
+}
+.category-container .category-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 3rem;
+}
+.category-container .category-list .category-item {
+  width: 350px;
+  height: 300px;
+  margin: 2rem;
+  cursor: pointer;
+  position: relative;
+}
+.category-container .category-list .category-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.category-container .category-list .category-item .movie-hover {
+  visibility: hidden;
+}
+.category-container .category-list .category-item:hover .movie-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 2px 15px -1px rgba(151, 149, 149, 0.75);
+  visibility: visible;
+}
+.category-container .category-list .category-item:hover .movie-hover .category-movie-title {
+  font-weight: bold;
+}
+.category-container .category-list .category-item:hover .movie-hover .category-movie-likes {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+@media (max-width: 850px) {
+  .category-container h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding: 4rem 5rem;
+  }
+  .category-container .category-list {
+    margin-left: 1rem;
+  }
+}
+.trailer {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.trailer .youtube-container {
+  position: absolute;
+  top: 5em;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.trailer .youtube-container iframe {
+  border: none;
+}
+
+.signup-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+.signup-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.signup-container .gradient {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, black, transparent);
+}
+.signup-container .signup-overlay {
+  position: fixed;
+  left: 0;
+  top: 8rem;
+  width: 100%;
+  padding: 4px 24px;
+  z-index: 50;
+}
+.signup-container .signup-overlay .signup-section {
+  max-width: 450px;
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.855);
+  color: white;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+}
+.signup-container .signup-overlay .signup-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.signup-container .signup-overlay .signup-section .signup-form-control {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 2rem;
+}
+.signup-container .signup-overlay .signup-section .signup-form-control input {
+  font-size: 1.2rem;
+  background-color: rgba(100, 99, 99, 0.593);
+  border: none;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  color: white;
+}
+.signup-container .signup-overlay .signup-section .signup-form-control button {
+  background-color: rgb(248, 45, 45);
+  color: rgba(255, 255, 255, 0.807);
+  padding: 0.6rem 0.8rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.signup-container .signup-overlay .signup-section .signup-form-control .signup-underlings {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.8rem 0.5rem;
+}
+.signup-container .signup-overlay .signup-section .signup-form-control p {
+  margin-left: 1rem;
+}
+.signup-container .signup-overlay .signup-section .signup-form-control p span {
+  color: rgba(144, 143, 143, 0.762);
+}
+.signup-container .signup-overlay .signup-section .signup-form-control p a {
+  color: white;
+  margin-left: 0.5rem;
+  text-decoration: none;
+}
+.signup-container .signup-overlay .signup-section .signup-form-control p a:hover {
+  text-decoration: underline;
+}
+.signup-container .signup-overlay .signup-section .signup-form-control p a:hover, .signup-container .signup-overlay .signup-section .signup-form-control p a:active, .signup-container .signup-overlay .signup-section .signup-form-control p a:visited {
+  color: white;
+}
+
+.error-message {
+  background-color: red;
+  margin-left: 1.5rem;
+  padding: 0.3rem 1rem;
+  width: 350px;
+  margin-left: 2rem;
+  margin-right: 0.5rem;
+}/*# sourceMappingURL=styles.css.map */
