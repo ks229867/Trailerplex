@@ -155,6 +155,11 @@ body {
 .navbar .nav-right .signIn-btn:hover {
   font-weight: bold;
 }
+@media screen and (max-width: 900px) {
+  .navbar .nav-right .icon {
+    margin: 0 8px;
+  }
+}
 .navbar .hamburger-icon {
   width: 35px;
   height: 35px;
@@ -183,6 +188,10 @@ body {
 }
 
 @media (max-width: 850px) {
+  .navbar h1 {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
   .navbar .show {
     visibility: visible;
   }
@@ -283,6 +292,7 @@ body {
   .main .movie-info {
     top: 25%;
     height: 90%;
+    padding: 0 1rem;
   }
   .main .movie-info .main-movie-title {
     font-size: 2.5rem;
@@ -367,6 +377,9 @@ body {
   text-decoration: underline;
 }
 
+.row-container {
+  margin-top: 2rem;
+}
 .row-container h2 {
   color: white;
   padding: 0 2rem;
@@ -426,9 +439,6 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.row-container .row-items .row-item .item-info {
-  visibility: hidden;
-}
 .row-container .row-items .row-item:hover .row-item-hover {
   background-color: rgb(0, 0, 0);
   width: 100%;
@@ -446,13 +456,6 @@ body {
 .row-container .row-items .row-item:hover .row-item-hover .hover-movie-title {
   font-weight: bold;
 }
-.row-container .row-items .row-item:hover .row-item-hover .hover-movie-likes {
-  position: absolute;
-  top: 5%;
-  left: 5%;
-  z-index: 100;
-  cursor: default;
-}
 
 .movie-section {
   display: grid;
@@ -464,8 +467,8 @@ body {
   padding: 5rem;
 }
 .movie-section .movie-left .movie-poster {
-  width: 400px;
-  height: 500px;
+  width: 300px;
+  height: 400px;
   box-shadow: 3px 2px 15px -1px rgba(151, 149, 149, 0.75);
 }
 .movie-section .movie-left .movie-poster img {
@@ -518,25 +521,29 @@ body {
 @media (max-width: 850px) {
   .movie-section {
     grid-template-columns: 1fr;
+    margin-top: 6rem;
   }
-  .movie-right {
-    padding: 1rem 2rem;
-    margin-left: 3rem;
+  .movie-section .movie-left {
+    padding: 1rem;
   }
-  .movie-right h1 {
+  .movie-section .movie-right {
+    padding: 1rem 0;
+    margin-left: 1rem;
+  }
+  .movie-section .movie-right h1 {
     margin-bottom: 1rem;
     font-size: 2rem;
     letter-spacing: 3px;
   }
-  .movie-right p {
+  .movie-section .movie-right p {
     width: 80%;
     letter-spacing: 1.5px;
     font-size: 1.2rem;
   }
-  .movie-right .movie-info {
+  .movie-section .movie-right .movie-info {
     margin-bottom: 1.5rem;
   }
-  .movie-right .movie-info span {
+  .movie-section .movie-right .movie-info span {
     margin-left: 1rem;
   }
 }
@@ -657,10 +664,14 @@ body {
 }
 
 @media (max-width: 850px) {
+  .category-container {
+    margin: 2rem 1rem;
+  }
   .category-container h2 {
     font-size: 2rem;
     text-transform: uppercase;
-    padding: 4rem 5rem;
+    padding: 4rem 0 2rem;
+    text-align: center;
   }
   .category-container .category-list {
     margin-left: 1rem;

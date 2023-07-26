@@ -52,7 +52,6 @@ function Row({title, fetchURL, type}) {
                 <img src={searchedImageURL} alt={movie?.title} />
                 <div className='row-item-hover'>
                   <p className='hover-movie-title'>{movie?.title}</p>
-                 
                 </div>
             </div>
           })}
